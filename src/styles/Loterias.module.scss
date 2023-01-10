@@ -13,7 +13,7 @@
       @apply w-[80%] h-full flex justify-between items-start;
     }
     .botao{
-      @apply bg-[#e5e7eb];
+      @apply bg-slate-300;
       @media (min-width: $tablet) {
         @apply self-center;
       }
@@ -38,10 +38,10 @@
       .titulo{
         @apply text-3xl text-white font-bold;
         @media (min-width: $tablet) {
-          @apply text-[2.8rem];
+          @apply text-4xl;
         }
         @media (min-width: $desktop_xl) {
-          @apply text-[3rem];
+          @apply text-5xl;
         }
       } 
     }
