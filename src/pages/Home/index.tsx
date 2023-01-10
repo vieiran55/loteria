@@ -6,7 +6,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import axios from "axios";
-import MenuNav from "../../components/nav";
+import MenuNav from "../../components/MenuNav";
 import INav from "../../interfaces/INav";
 
 export default function Home(props: INav) {

@@ -1,0 +1,86 @@
+@import 'styles/variaveis';
+@import "styles/breakpoints";
+
+
+.mega{
+  @apply h-full;
+  @media (min-width: $tablet) {
+    @apply flex flex-row;
+  }
+  .box{
+    @apply flex items-center flex-col p-8 text-white h-1/2;
+    background-color: $mega;
+    @media (min-width: $tablet) {
+      @apply w-[80%] h-full flex justify-between items-start;
+    }
+    .botao{
+      @apply bg-[#e5e7eb];
+      @media (min-width: $tablet) {
+        @apply self-center;
+      }
+    }
+    .cabecalho{
+      @apply flex flex-col items-center mt-14;
+      @media (min-width: $tablet) {
+        @apply flex flex-row;
+      }
+      .imagem{
+        @apply w-28 h-16;
+        @media (min-width: $tablet) {
+          @apply h-24 w-28;
+        }
+      }
+      .titulo{
+        @apply text-3xl text-white font-bold;
+        @media (min-width: $tablet) {
+          @apply text-[2.8rem];
+        }
+      } 
+    }
+    .concurso{
+      @apply mt-10;
+      @media (min-width: $tablet) {
+        @apply hidden;
+      }
+      &__tablet{
+        @apply hidden;
+        @media (min-width: $tablet) {
+          @apply block text-xs;
+        }
+      }
+      &__data{
+        @apply hidden;
+        @media (min-width: $tablet) {
+          @apply block;
+        }
+      }
+    }
+  }
+  .numeros{
+    @apply w-screen h-[70%] bg-[#efefef] rounded-t-[110px] -mt-28;
+    @media (min-width: $tablet) {
+      @apply w-[80%] h-full m-0 rounded-t-none rounded-tl-[100px]  rounded-bl-[100px] -ml-28;
+    }
+    &__conteiner {
+      @apply flex  justify-center;
+      @media (min-width: $tablet) {
+        @apply items-center h-full;
+      }
+    }
+    &__sorteados{
+      @apply flex flex-col justify-around w-5/6 h-32	mt-16 items-center flex-wrap;
+      .sorteados{
+        @apply flex flex-col justify-center text-black text-2xl font-bold bg-white h-12 w-12 text-center rounded-full;
+        @media (min-width: $tablet) {
+          @apply h-20 w-20;
+        }
+      }
+    }
+    .sobre{
+      @apply mt-[24rem] text-center text-black font-bold;
+      @media (min-width: $tablet) {
+        @apply hidden;
+      }
+    }
+  }
+}

@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import MenuNav from "../../components/nav";
+import MenuNav from "../../components/MenuNav";
 import INav from "../../interfaces/INav";
+import estilos from "../../styles/Loterias.module.scss";
+import logo from "imgs/Logo_Sena.svg";
 
 export default function DiaDeSorte(props: INav) {
   const {navValue, setNavValue} = props;
@@ -30,16 +32,34 @@ export default function DiaDeSorte(props: INav) {
   }, []);
 
   return (
-    <>
-      <MenuNav navValue={navValue} setNavValue={setNavValue}/>
-      <div>
-        {DiaDeSorteNrConsurso} / {dataFormatada} / {DiaDeSorteNome}
+    <div className={estilos.diadesorte}>
+      <div className={estilos.box}>
+        <div className={estilos.botao}>
+          <MenuNav navValue={navValue} setNavValue={setNavValue} />
+        </div>
+        <div className={estilos.cabecalho}>
+          <img className={estilos.imagem} src={logo} />
+          <h1 className={estilos.titulo}>{DiaDeSorteNome}</h1>
+        </div>
+        <div>
+          <h2 className={estilos.concurso}>CONCURSO Nº {DiaDeSorteNrConsurso}</h2>
+          <h2 className={estilos.concurso__tablet}>CONCURSO</h2>
+          <h3 className={estilos.concurso__data}>{DiaDeSorteNrConsurso} - {dataFormatada}</h3>
+        </div>
       </div>
-      <div>
-        {DiaDeSorte.map((item, index) => (
-          <h2 key={index}>{item}</h2>
-        ))}
+      <div className={estilos.numeros}>
+        <div className={estilos.numeros__conteiner}>
+          <div className={estilos.numeros__sorteados}>
+            {DiaDeSorte.map((item, index) => (
+              <h2 className={estilos.resultados} key={index}>{item}</h2>
+            ))}
+          </div>
+        </div>
+        <div className={estilos.sobre}>
+          <h1>CONCURSO</h1>
+          <h2>{DiaDeSorteNrConsurso} - {dataFormatada}</h2>
+        </div>
       </div>
-    </>
+    </div>
   );
 }

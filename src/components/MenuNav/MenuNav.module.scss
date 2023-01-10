@@ -1,0 +1,6 @@
+@import 'styles/variaveis';
+@import "styles/breakpoints";
+
+.botao{
+  @apply bg-white text-black;
+}

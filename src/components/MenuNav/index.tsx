@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import INav from "../../interfaces/INav";
+import estilos from "./MenuNav.module.scss";
 
 
 
@@ -26,11 +27,13 @@ export default function MenuNav({navValue, setNavValue}: INav) {
   return (
     <div>
       <Button
+        className={estilos.botao}
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
+        sx={{backgroundColor: "#e5e7eb", color: "black", border: "2px solid"}}
       >
         {navValue}
       </Button>
@@ -45,7 +48,7 @@ export default function MenuNav({navValue, setNavValue}: INav) {
       >
         <MenuItem
           onClick={() => {
-            setNavValue("mega");
+            setNavValue("MEGA-SENA");
             navigate("/mega");
             setAnchorEl(null);
           }}

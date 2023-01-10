@@ -6,11 +6,13 @@ import {
   useNavigate,
 } from "react-router-dom";
 import axios from "axios";
-import MenuNav from "../../components/nav";
+import MenuNav from "../../components/MenuNav";
 import INav from "../../interfaces/INav";
+import estilos from "../../styles/Loterias.module.scss";
+import logo from "imgs/Logo_Sena.svg";
 
 export default function Mega(props: INav) {
-  const {navValue, setNavValue} = props;
+  const { navValue, setNavValue } = props;
   const [megaSena, setMegaSena] = useState([]);
   const [megaNrConsurso, setMegaNrConsurso] = useState("");
   const [megaNome, setMegaNome] = useState("");
@@ -37,16 +39,34 @@ export default function Mega(props: INav) {
   }, []);
 
   return (
-    <>
-      <MenuNav navValue={navValue} setNavValue={setNavValue}/>
-      <div>
-        {megaNrConsurso} / {dataFormatada} / {megaNome}
+    <div className={estilos.mega}>
+      <div className={estilos.box}>
+        <div className={estilos.botao}>
+          <MenuNav navValue={navValue} setNavValue={setNavValue} />
+        </div>
+        <div className={estilos.cabecalho}>
+          <img className={estilos.imagem} src={logo} />
+          <h1 className={estilos.titulo}>{megaNome}</h1>
+        </div>
+        <div>
+          <h2 className={estilos.concurso}>CONCURSO Nº {megaNrConsurso}</h2>
+          <h2 className={estilos.concurso__tablet}>CONCURSO</h2>
+          <h3 className={estilos.concurso__data}>{megaNrConsurso} - {dataFormatada}</h3>
+        </div>
       </div>
-      <div>
-        {megaSena.map((item, index) => (
-          <h2 key={index}>{item}</h2>
-        ))}
+      <div className={estilos.numeros}>
+        <div className={estilos.numeros__conteiner}>
+          <div className={estilos.numeros__sorteados}>
+            {megaSena.map((item, index) => (
+              <h2 className={estilos.resultados} key={index}>{item}</h2>
+            ))}
+          </div>
+        </div>
+        <div className={estilos.sobre}>
+          <h1>CONCURSO</h1>
+          <h2>{megaNrConsurso} - {dataFormatada}</h2>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
