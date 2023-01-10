@@ -7,7 +7,7 @@
     @apply flex flex-row;
   }
   .box{
-    @apply flex items-center flex-col p-8 text-white h-1/2;
+    @apply h-[382px] flex items-center flex-col p-8 text-white;
     background-color: $corDeFundo;
     @media (min-width: $tablet) {
       @apply w-[80%] h-full flex justify-between items-start;
@@ -46,17 +46,17 @@
       } 
     }
     .concurso{
-      @apply mt-10;
+      @apply mt-2;
       @media (min-width: $tablet) {
         @apply hidden;
       }
-      .concurso__tablet{
+      &__tablet{
         @apply hidden;
         @media (min-width: $tablet) {
           @apply block text-xs;
         }
       }
-      .concurso__data{
+      &__data{
         @apply hidden;
         @media (min-width: $tablet) {
           @apply block;
@@ -69,13 +69,13 @@
     @media (min-width: $tablet) {
       @apply w-[60%] h-full m-0 rounded-t-none rounded-tl-[100px]  rounded-bl-[100px] -ml-28;
     }
-    .numeros__conteiner {
+    &__conteiner {
       @apply flex  justify-center;
       @media (min-width: $tablet) {
         @apply items-center h-full;
       }
     }
-    .numeros__sorteados{
+    &__sorteados{
       @apply flex flex-col justify-around w-5/6 h-32	mt-16 items-center flex-wrap;
       @media (min-width: $tablet) {
         @apply h-72 w-full;
@@ -88,7 +88,7 @@
       }
     }
     .sobre{
-      @apply mt-[24rem] text-center text-black font-bold;
+      @apply mt-[16rem] text-center text-black font-bold;
       @media (min-width: $tablet) {
         @apply hidden;
       }
