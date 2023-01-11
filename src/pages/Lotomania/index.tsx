@@ -9,7 +9,6 @@ export default function Lotomania(props: INav) {
   const {navValue, setNavValue} = props;
   const [Lotomania, setLotomania] = useState([]);
   const [LotomaniaNrConsurso, setLotomaniaNrConsurso] = useState("");
-  const [LotomaniaNome, setLotomaniaNome] = useState("");
   const [LotomaniaData, setLotomaniaData] = useState("");
   const date = new Date(LotomaniaData);
   const dataFormatada = date.toLocaleDateString("en-GB");
@@ -17,13 +16,12 @@ export default function Lotomania(props: INav) {
   useEffect(() => {
     axios
       .get(
-        "https://apiloterias.com.br/app/resultado?loteria=lotomania&token=Cg4qDgYQVXlbwWW"
+        "https://servicebus2.caixa.gov.br/portaldeloterias/api/lotomania/"
       )
       .then((resposta) => {
-        setLotomania(resposta.data.dezenas);
-        setLotomaniaNrConsurso(resposta.data.numero_concurso);
-        setLotomaniaData(resposta.data.data_concurso);
-        setLotomaniaNome(resposta.data.nome);
+        setLotomania(resposta.data.listaDezenas);
+        setLotomaniaNrConsurso(resposta.data.numero);
+        setLotomaniaData(resposta.data.dataApuracao);
         console.log(resposta);
       })
       .catch((erro) => {
@@ -39,7 +37,7 @@ export default function Lotomania(props: INav) {
         </div>
         <div className={estilos.cabecalho}>
           <img className={estilos.imagem} src={logo} />
-          <h1 className={estilos.titulo}>{LotomaniaNome}</h1>
+          <h1 className={estilos.titulo}>LOTOMANIA</h1>
         </div>
         <div>
           <h2 className={estilos.concurso}>CONCURSO Nº {LotomaniaNrConsurso}</h2>

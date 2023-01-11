@@ -9,7 +9,6 @@ export default function Lotofacil(props: INav) {
   const {navValue, setNavValue} = props;
   const [Lotofacil, setLotofacil] = useState([]);
   const [LotofacilNrConsurso, setLotofacilNrConsurso] = useState("");
-  const [LotofacilNome, setLotofacilNome] = useState("");
   const [LotofacilData, setLotofacilData] = useState("");
   const date = new Date(LotofacilData);
   const dataFormatada = date.toLocaleDateString("en-GB");
@@ -17,14 +16,12 @@ export default function Lotofacil(props: INav) {
   useEffect(() => {
     axios
       .get(
-        "https://apiloterias.com.br/app/resultado?loteria=lotofacil&token=Cg4qDgYQVXlbwWW"
+        "https://servicebus2.caixa.gov.br/portaldeloterias/api/lotofacil/"
       )
       .then((resposta) => {
-        setLotofacil(resposta.data.dezenas);
-        setLotofacilNrConsurso(resposta.data.numero_concurso);
-        setLotofacilData(resposta.data.data_concurso);
-        setLotofacilNome(resposta.data.nome);
-        console.log(resposta);
+        setLotofacil(resposta.data.listaDezenas);
+        setLotofacilNrConsurso(resposta.data.numero);
+        setLotofacilData(resposta.data.dataApuracao);
       })
       .catch((erro) => {
         console.log(erro);
@@ -39,7 +36,7 @@ export default function Lotofacil(props: INav) {
         </div>
         <div className={estilos.cabecalho}>
           <img className={estilos.imagem} src={logo} />
-          <h1 className={estilos.titulo}>{LotofacilNome}</h1>
+          <h1 className={estilos.titulo}>LOTOFÁCIL</h1>
         </div>
         <div>
           <h2 className={estilos.concurso}>CONCURSO Nº {LotofacilNrConsurso}</h2>

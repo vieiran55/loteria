@@ -9,7 +9,6 @@ export default function Quina(props: INav) {
   const {navValue, setNavValue} = props;
   const [quina, setQuina] = useState([]);
   const [quinaNrConsurso, setQuinaNrConsurso] = useState("");
-  const [quinaNome, setQuinaNome] = useState("");
   const [quinaData, setQuinaData] = useState("");
   const date = new Date(quinaData);
   const dataFormatada = date.toLocaleDateString("en-GB");
@@ -17,14 +16,12 @@ export default function Quina(props: INav) {
   useEffect(() => {
     axios
       .get(
-        "https://apiloterias.com.br/app/resultado?loteria=quina&token=Cg4qDgYQVXlbwWW"
+        "https://servicebus2.caixa.gov.br/portaldeloterias/api/quina/"
       )
       .then((resposta) => {
-        setQuina(resposta.data.dezenas);
-        setQuinaNrConsurso(resposta.data.numero_concurso);
-        setQuinaData(resposta.data.data_concurso);
-        setQuinaNome(resposta.data.nome);
-        console.log(resposta);
+        setQuina(resposta.data.listaDezenas);
+        setQuinaNrConsurso(resposta.data.numero);
+        setQuinaData(resposta.data.dataApuracao);
       })
       .catch((erro) => {
         console.log(erro);
@@ -39,7 +36,7 @@ export default function Quina(props: INav) {
         </div>
         <div className={estilos.cabecalho}>
           <img className={estilos.imagem} src={logo} />
-          <h1 className={estilos.titulo}>{quinaNome}</h1>
+          <h1 className={estilos.titulo}>QUINA</h1>
         </div>
         <div>
           <h2 className={estilos.concurso}>CONCURSO Nº {quinaNrConsurso}</h2>

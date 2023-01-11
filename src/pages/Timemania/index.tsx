@@ -9,7 +9,6 @@ export default function Timemania(props: INav) {
   const {navValue, setNavValue} = props;
   const [Timemania, setTimemania] = useState([]);
   const [TimemaniaNrConsurso, setTimemaniaNrConsurso] = useState("");
-  const [TimemaniaNome, setTimemaniaNome] = useState("");
   const [TimemaniaData, setTimemaniaData] = useState("");
   const date = new Date(TimemaniaData);
   const dataFormatada = date.toLocaleDateString("en-GB");
@@ -17,14 +16,12 @@ export default function Timemania(props: INav) {
   useEffect(() => {
     axios
       .get(
-        "https://apiloterias.com.br/app/resultado?loteria=timemania&token=Cg4qDgYQVXlbwWW"
+        "https://servicebus2.caixa.gov.br/portaldeloterias/api/timemania/"
       )
       .then((resposta) => {
-        setTimemania(resposta.data.dezenas);
-        setTimemaniaNrConsurso(resposta.data.numero_concurso);
-        setTimemaniaData(resposta.data.data_concurso);
-        setTimemaniaNome(resposta.data.nome);
-        console.log(resposta);
+        setTimemania(resposta.data.listaDezenas);
+        setTimemaniaNrConsurso(resposta.data.numero);
+        setTimemaniaData(resposta.data.dataApuracao);
       })
       .catch((erro) => {
         console.log(erro);
@@ -39,7 +36,7 @@ export default function Timemania(props: INav) {
         </div>
         <div className={estilos.cabecalho}>
           <img className={estilos.imagem} src={logo} />
-          <h1 className={estilos.titulo}>{TimemaniaNome}</h1>
+          <h1 className={estilos.titulo}>TIMEMANIA</h1>
         </div>
         <div>
           <h2 className={estilos.concurso}>CONCURSO Nº {TimemaniaNrConsurso}</h2>
