@@ -41,7 +41,7 @@ export default function Timemania(props: INav) {
         <div>
           <h2 className={estilos.concurso}>CONCURSO Nº {TimemaniaNrConsurso}</h2>
           <h2 className={estilos.concurso__tablet}>CONCURSO</h2>
-          <h3 className={estilos.concurso__data}>{TimemaniaNrConsurso} - {dataFormatada}</h3>
+          <h3 className={estilos.concurso__data}>{TimemaniaNrConsurso} - {TimemaniaData}</h3>
         </div>
       </div>
       <div className={estilos.numeros}>
@@ -54,7 +54,7 @@ export default function Timemania(props: INav) {
         </div>
         <div className={estilos.sobre}>
           <h1>CONCURSO</h1>
-          <h2>{TimemaniaNrConsurso} - {dataFormatada}</h2>
+          <h2>{TimemaniaNrConsurso} - {TimemaniaData}</h2>
         </div>
       </div>
     </div>

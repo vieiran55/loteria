@@ -41,7 +41,7 @@ export default function DiaDeSorte(props: INav) {
         <div>
           <h2 className={estilos.concurso}>CONCURSO Nº {DiaDeSorteNrConsurso}</h2>
           <h2 className={estilos.concurso__tablet}>CONCURSO</h2>
-          <h3 className={estilos.concurso__data}>{DiaDeSorteNrConsurso} - {dataFormatada}</h3>
+          <h3 className={estilos.concurso__data}>{DiaDeSorteNrConsurso} - {DiaDeSorteData}</h3>
         </div>
       </div>
       <div className={estilos.numeros}>
@@ -54,7 +54,7 @@ export default function DiaDeSorte(props: INav) {
         </div>
         <div className={estilos.sobre}>
           <h1>CONCURSO</h1>
-          <h2>{DiaDeSorteNrConsurso} - {dataFormatada}</h2>
+          <h2>{DiaDeSorteNrConsurso} - {DiaDeSorteData}</h2>
         </div>
       </div>
     </div>

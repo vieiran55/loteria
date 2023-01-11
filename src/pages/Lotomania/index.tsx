@@ -42,7 +42,7 @@ export default function Lotomania(props: INav) {
         <div>
           <h2 className={estilos.concurso}>CONCURSO Nº {LotomaniaNrConsurso}</h2>
           <h2 className={estilos.concurso__tablet}>CONCURSO</h2>
-          <h3 className={estilos.concurso__data}>{LotomaniaNrConsurso} - {dataFormatada}</h3>
+          <h3 className={estilos.concurso__data}>{LotomaniaNrConsurso} - {LotomaniaData}</h3>
         </div>
       </div>
       <div className={estilos.numeros}>
@@ -55,7 +55,7 @@ export default function Lotomania(props: INav) {
         </div>
         <div className={estilos.sobre}>
           <h1>CONCURSO</h1>
-          <h2>{LotomaniaNrConsurso} - {dataFormatada}</h2>
+          <h2>{LotomaniaNrConsurso} - {LotomaniaData}</h2>
         </div>
       </div>
     </div>

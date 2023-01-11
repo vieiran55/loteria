@@ -41,7 +41,7 @@ export default function Lotofacil(props: INav) {
         <div>
           <h2 className={estilos.concurso}>CONCURSO Nº {LotofacilNrConsurso}</h2>
           <h2 className={estilos.concurso__tablet}>CONCURSO</h2>
-          <h3 className={estilos.concurso__data}>{LotofacilNrConsurso} - {dataFormatada}</h3>
+          <h3 className={estilos.concurso__data}>{LotofacilNrConsurso} - {LotofacilData}</h3>
         </div>
       </div>
       <div className={estilos.numeros}>
@@ -54,7 +54,7 @@ export default function Lotofacil(props: INav) {
         </div>
         <div className={estilos.sobre}>
           <h1>CONCURSO</h1>
-          <h2>{LotofacilNrConsurso} - {dataFormatada}</h2>
+          <h2>{LotofacilNrConsurso} - {LotofacilData}</h2>
         </div>
       </div>
     </div>

@@ -41,7 +41,7 @@ export default function Quina(props: INav) {
         <div>
           <h2 className={estilos.concurso}>CONCURSO Nº {quinaNrConsurso}</h2>
           <h2 className={estilos.concurso__tablet}>CONCURSO</h2>
-          <h3 className={estilos.concurso__data}>{quinaNrConsurso} - {dataFormatada}</h3>
+          <h3 className={estilos.concurso__data}>{quinaNrConsurso} - {quinaData}</h3>
         </div>
       </div>
       <div className={estilos.numeros}>
@@ -54,7 +54,7 @@ export default function Quina(props: INav) {
         </div>
         <div className={estilos.sobre}>
           <h1>CONCURSO</h1>
-          <h2>{quinaNrConsurso} - {dataFormatada}</h2>
+          <h2>{quinaNrConsurso} - {quinaData}</h2>
         </div>
       </div>
     </div>

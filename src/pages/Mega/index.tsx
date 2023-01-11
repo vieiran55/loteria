@@ -47,7 +47,7 @@ export default function Mega(props: INav) {
         <div>
           <h2 className={estilos.concurso}>CONCURSO Nº {megaNrConsurso}</h2>
           <h2 className={estilos.concurso__tablet}>CONCURSO</h2>
-          <h3 className={estilos.concurso__data}>{megaNrConsurso} - {dataFormatada}</h3>
+          <h3 className={estilos.concurso__data}>{megaNrConsurso} - {megaData}</h3>
         </div>
       </div>
       <div className={estilos.numeros}>
@@ -60,7 +60,7 @@ export default function Mega(props: INav) {
         </div>
         <div className={estilos.sobre}>
           <h1>CONCURSO</h1>
-          <h2>{megaNrConsurso} - {dataFormatada}</h2>
+          <h2>{megaNrConsurso} - {megaData}</h2>
         </div>
       </div>
     </div>
